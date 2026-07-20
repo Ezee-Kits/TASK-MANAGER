@@ -1,0 +1,1 @@
+web: gunicorn main_task.wsgi:application

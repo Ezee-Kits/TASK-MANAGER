@@ -1,0 +1,50 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+{% block head %}
+    <title>Task Master</title>
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="header-section">
+        <h1 class="page-title">📝 Task Manager</h1>
+        <a href="https://youtu.be/T05qEi8vcVM?si=24rwjx9z1ARFkLsv"
+            target="_blank"
+            class="tutorial-btn">
+            ▶ See How It Was Built
+        </a>
+    </div>
+
+    <table class="task-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.content }}</td>
+                    <td>{{ task.date_added }}</td>
+                    <td>
+                        <a href="{% url 'delete_page' task.id %}" class="btn-delete">Delete</a>
+                        <a href="{% url 'update_page' task.id %}" class="btn-update">Update</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form method="POST" action="/" class="task-form">
+        {% csrf_token %}
+        {{ form.content }}
+        <input type="submit" name="AddTask" value="Add Task">
+    </form>
+  
+</div>
+{% endblock %}
