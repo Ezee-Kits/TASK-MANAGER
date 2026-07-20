@@ -19,7 +19,7 @@ A modern Task Manager web application built with Django that allows users to cre
 * HTML5
 * CSS3
 * SQLite
-* Bootstrap (if applicable)
+* Bootstrap4
 
 ## Purpose
 
@@ -35,6 +35,6 @@ A complete step-by-step tutorial showing how this project was built is available
 
 ## Author
 
-Chikwendu Emmanuel Onyedika (Ezee Kits)
+Ezee Kits
 
 Electrical & Electronic Engineer | Python Developer | Machine Learning Enthusiast
